@@ -21,7 +21,7 @@ export default function Home() {
         </div>
       </div>
       <h1 className="mt-6 text-4xl font-bold">Coming Soon</h1>
-      <p className="mt-4 text-xl">Our website is under construction. We&apos;ll be here soon.</p>
+      <p className="mt-4 text-xl">Our website is under construction. We&apos;ll be here soon. Stay Tuned</p>
     </main>
     
     <footer className="flex items-center justify-center w-full h-24 border-t">
