@@ -25,7 +25,7 @@ export default function Home() {
     </main>
     
     <footer className="flex items-center justify-center w-full h-24 border-t">
-      <p className="text-sm">© 2024 bluestonecruise. All rights reserved.</p>
+      <p className="text-sm">© 2025 bluestonecruise. All rights reserved.</p>
     </footer>
   </div>
   );
