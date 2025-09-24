@@ -1,0 +1,44 @@
+.reviewsSection {
+  background-color: #4117aa; /* dark green like the screenshot */
+  padding: 50px 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #ffd700; /* yellow highlight */
+}
+
+.logosContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.logoCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 180px;
+}
+
+.logo {
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.stars {
+  color: gold;
+  font-size: 20px;
+  margin: 8px 0;
+}
+
+.logoCard p {
+  font-size: 14px;
+  margin: 0;
+}
