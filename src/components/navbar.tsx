@@ -4,7 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X, Phone, Search } from "lucide-react"; // icons
-import Logo from '../../public/logo.svg';
+import Logo from "../../public/logo.svg";
+import styles from "../styles/Navbar.module.css"; // Import CSS
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -19,51 +20,36 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
+    <nav className={styles.navbar}>
+      <div className={styles.container}>
         {/* Logo */}
-        <Link href="/">
-          <Image
-            src={Logo} // put your logo inside public/logo.png
-            alt="Logo"
-            width={60}
-            height={60}
-          />
+        <Link href="/" className={styles.logo}>
+          <Image src={Logo} alt="Logo" width={60} height={60} />
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-6 font-semibold text-gray-900">
+        <div className={`${styles.menu} hidden md:flex`}>
           {menuItems.map((item) => (
-            <div key={item.label} className="relative group">
-              <Link href="/" className="hover:text-blue-600">
-                {item.label}
-              </Link>
+            <div key={item.label} className={styles.menuItem}>
+              <Link href="/">{item.label}</Link>
               {item.dropdown && (
-                <div className="absolute left-0 hidden group-hover:block bg-white shadow-lg mt-2 p-3 w-48">
-                  <Link href="/" className="block px-2 py-1 hover:bg-gray-100">
-                    Option 1
-                  </Link>
-                  <Link href="/" className="block px-2 py-1 hover:bg-gray-100">
-                    Option 2
-                  </Link>
-                  <Link href="/" className="block px-2 py-1 hover:bg-gray-100">
-                    Option 3
-                  </Link>
+                <div className={styles.dropdown}>
+                  <Link href="/">Option 1</Link>
+                  <Link href="/">Option 2</Link>
+                  <Link href="/">Option 3</Link>
                 </div>
               )}
             </div>
           ))}
         </div>
 
-        {/* Right side */}
-        <div className="hidden md:flex items-center gap-4">
-          <div className="flex items-center gap-1 text-sm font-semibold text-gray-900">
+        {/* Right Side */}
+        <div className={`${styles.right} hidden md:flex`}>
+          <div className={styles.phone}>
             <Phone size={18} /> (727) 393-1947
           </div>
           <Search className="cursor-pointer" size={20} />
-          <button className="bg-red-800 text-white px-4 py-2 rounded-md font-bold">
-            BOOK NOW
-          </button>
+          <button className={styles.bookButton}>BOOK NOW</button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -77,24 +63,16 @@ export default function Navbar() {
 
       {/* Mobile Dropdown */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white shadow-md px-4 pb-4">
+        <div className={`${styles.mobileMenu} md:hidden`}>
           {menuItems.map((item) => (
-            <Link
-              key={item.label}
-              href="/"
-              className="block py-2 font-semibold border-b border-gray-200"
-            >
+            <Link key={item.label} href="/" className={styles.mobileLink}>
               {item.label}
             </Link>
           ))}
-          <div className="mt-4">
-            <div className="flex items-center gap-2">
-              <Phone size={18} /> (727) 393-1947
-            </div>
-            <button className="mt-3 w-full bg-red-800 text-white py-2 rounded-md font-bold">
-              BOOK NOW
-            </button>
+          <div className={styles.mobilePhone}>
+            <Phone size={18} /> (727) 393-1947
           </div>
+          <button className={styles.mobileBookButton}>BOOK NOW</button>
         </div>
       )}
     </nav>
