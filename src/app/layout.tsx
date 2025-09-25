@@ -20,8 +20,9 @@ export default function RootLayout({
   return (
     <html lang="en">
        <Navbar />
-       <ReviewsSection/>
        <Carousel/>
+       <ReviewsSection/>
+       
       <body className={inter.className}>{children}</body>
     </html>
   );
