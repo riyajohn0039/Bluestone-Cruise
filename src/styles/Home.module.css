@@ -1,0 +1,67 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #1e3a8a; /* Tailwind's bg-blue-900 */
+  color: white;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 0 5rem;
+  text-align: center;
+}
+
+.logoWrapper {
+  position: relative;
+}
+
+.logoBorder {
+  position: absolute;
+  inset: 0;
+  border: 1px solid #d1d5db; /* gray-300 */
+  border-radius: 50%;
+  margin: 0.5rem;
+}
+
+.logoCircle {
+  background: white;
+  border-radius: 50%;
+  padding: 0.5rem;
+}
+
+.logoInner {
+  border: 1px solid #d1d5db;
+  border-radius: 50%;
+  padding: 1rem;
+}
+
+.title {
+  margin-top: 1.5rem;
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: bold;
+}
+
+.subtitle {
+  margin-top: 1rem;
+  font-size: 1.25rem; /* text-xl */
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 6rem;
+  border-top: 1px solid #d1d5db;
+}
+
+.footerText {
+  font-size: 0.875rem;
+}
